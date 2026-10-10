@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Pavan Kumar Kunapu</title>
-<meta name="description" content="Pavan Kumar Kunapu is a ServiceNow Certified Application Developer building Now Assist skills, AI agents and SecOps integrations for Vulnerability Response, AVR and the CMDB.">
+<meta name="description" content="Pavan Kumar Kunapu is a ServiceNow Certified Application Developer building Now Assist skills, AI agents, SecOps integrations and Store-certified apps, from ServiceNow Store submission through certification.">
 <meta name="author" content="Pavan Kumar Kunapu">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="profile">
@@ -415,22 +415,35 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
 }
 
 /* ---------- About ---------- */
-.about__grid { row-gap: 2rem; }
-.about__lead { font-family: var(--serif); font-weight: 380; font-size: var(--fs-lead); line-height: 1.14; letter-spacing: -.012em; max-width: 25em; }
+.about { padding-top: calc(var(--space-section) * .8); }
+.about__grid { row-gap: 1.25rem; }
+.about__lead { font-family: var(--serif); font-weight: 380; font-size: var(--fs-lead); line-height: 1.14; letter-spacing: -.012em; max-width: 22.5em; }
 .about__lead em { font-style: italic; color: var(--accent); }
-.about__cols { margin-top: var(--space-block); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-block); align-items: start; }
-.about__text { display: grid; gap: 1.1em; align-content: start; color: var(--ink-soft); max-width: 36em; }
-.facts-wrap { container-type: inline-size; min-width: 0; }
-.facts > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: .3rem; padding-block: .9rem; border-top: 1px solid var(--line); }
-.facts > div:last-child { border-bottom: 1px solid var(--line); }
-.facts dt { color: var(--muted); }
-.facts dd { font-size: var(--fs-small); line-height: 1.45; }
-@container (min-width: 26rem) {
-  .facts > div { grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1rem; align-items: baseline; }
+.about__text, .about__facts { grid-column: 1 / -1; min-width: 0; margin-top: var(--space-block); }
+.about__facts { margin-top: 2rem; }
+.about__text { display: grid; gap: 1.1em; align-content: start; color: var(--ink-soft); }
+.about__text > p:not(.about__label) { max-width: 36em; }
+.about__label { color: var(--ink); padding-bottom: .85rem; margin-bottom: .25rem; }
+[data-rule] { position: relative; }
+[data-rule]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line); transform-origin: 0 50%; transition: transform 1.1s var(--ease) calc(var(--i, 0) * 70ms); }
+.about__label::after, .work-cols span::after { background: var(--line-strong); }
+[data-rule].rule-pre::after { transform: scaleX(0); }
+.facts > div { display: grid; gap: .3rem; padding-block: .95rem; }
+.facts dt { color: var(--muted); transition: color var(--dur-fast); }
+.facts dd { font-size: var(--fs-small); line-height: 1.45; transition: transform var(--dur) var(--ease); }
+@media (hover: hover) {
+  .facts > div:hover dt { color: var(--accent); }
+  .facts > div:hover dd { transform: translateX(4px); }
+}
+@media (min-width: 600px) {
+  .about__text { grid-column: 1 / span 6; }
+  .about__facts { grid-column: 8 / -1; margin-top: var(--space-block); }
 }
 @media (min-width: 1024px) {
-  .about__grid .rail { align-self: start; padding-top: .9em; padding-bottom: 0; }
-  .about__cols { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); }
+  .about__grid { align-items: first baseline; row-gap: 0; }
+  .about__grid .rail { padding-bottom: 0; }
+  .about__text { grid-column: 4 / span 4; }
+  .about__facts { grid-column: 9 / -1; }
 }
 
 /* ---------- Expertise ---------- */
@@ -465,13 +478,64 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
 }
 @media (min-width: 1024px) { .xp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
-/* ---------- Work ---------- */
-.work-grid { --stagger: 0px; display: grid; grid-template-columns: minmax(0, 1fr); row-gap: clamp(3.5rem, 12vw, 4.5rem); align-items: start; }
-.work-card { position: relative; min-width: 0; transform-style: preserve-3d; }
-@media (min-width: 700px) {
-  .work-grid { --stagger: clamp(3.5rem, 9vw, 11rem); grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 5rem); row-gap: clamp(4rem, 8vw, 9rem); padding-bottom: var(--stagger); }
-  .work-card:nth-child(even) { top: var(--stagger); }
+/* ---------- Store submission & certification ---------- */
+.store {
+  --st-acc: var(--accent-inv);
+  --st-soft: color-mix(in srgb, var(--paper) 74%, transparent);
+  --st-line: color-mix(in srgb, var(--paper) 20%, transparent);
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  background: var(--ink); color: var(--paper); border-radius: var(--radius);
+  padding: clamp(1.5rem, 4.5vw, 4rem);
+  display: grid; row-gap: clamp(2.25rem, 4.5vw, 3.75rem);
 }
+.store::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(34rem circle at var(--mx, 80%) var(--my, 0%), color-mix(in srgb, var(--st-acc) 22%, transparent), transparent 65%); opacity: .7; transition: opacity var(--dur) var(--ease); }
+.store__head { display: grid; row-gap: 1.25rem; }
+.store__titles { display: grid; gap: .9rem; align-content: start; }
+.store__top { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.25rem; color: var(--st-soft); }
+.store__top span:first-child { display: inline-flex; align-items: center; gap: .7em; color: var(--paper); }
+.store__top span:first-child::before { content: ""; width: 7px; height: 7px; background: var(--st-acc); flex: none; }
+.store h3 { font-size: var(--fs-h3-lg); letter-spacing: -.035em; line-height: 1; }
+.store h3 .wide { font-stretch: 125%; }
+.store__intro { display: grid; gap: 1.1rem; align-content: start; }
+.store__intro p { color: var(--st-soft); max-width: 36em; }
+.store .tags li { border-color: var(--st-line); color: var(--st-soft); }
+.store__steps { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); }
+.store__step { position: relative; display: grid; gap: .3rem; align-content: start; padding: 0 0 1.75rem 2.1rem; }
+.store__step:last-child { padding-bottom: 0; }
+.store__step:not(:last-child)::after {
+  content: ""; position: absolute; left: 5px; top: calc(.3rem + 11px); bottom: -.3rem; width: 1px;
+  background: linear-gradient(var(--st-acc), var(--st-acc)) 0 0 / 100% 100% no-repeat, var(--st-line);
+  transition: background-size .9s var(--ease-io) .15s;
+}
+.store.is-pre .store__step:not(.is-lit)::after { background-size: 100% 0%; }
+.store__step::before { content: ""; position: absolute; left: 0; top: .3rem; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--st-acc); background: var(--st-acc); transition: background-color var(--dur) var(--ease), scale var(--dur) var(--ease); }
+.store.is-pre .store__step:not(.is-lit)::before { background: var(--ink); }
+.store__num { color: var(--st-soft); }
+.store__step h4 { font-size: clamp(1.25rem, 1.6vw, 1.5rem); font-weight: 700; font-stretch: 112%; letter-spacing: -.02em; line-height: 1.1; transition: color var(--dur-fast), transform var(--dur) var(--ease); }
+.store__step p { color: var(--st-soft); font-size: var(--fs-small); line-height: 1.5; max-width: 26em; }
+@media (hover: hover) {
+  .store:hover::before { opacity: 1; }
+  .store__step:hover h4 { color: var(--st-acc); transform: translateX(4px); }
+  .store__step:hover::before { scale: 1.35; }
+}
+@media (min-width: 1024px) {
+  .store__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: end; }
+  .store__titles { grid-column: 1 / span 6; }
+  .store__intro { grid-column: 7 / -1; }
+  .store__steps { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .store__step { padding: 1.9rem 1rem 0 0; }
+  .store__step::before { top: 0; }
+  .store__step:not(:last-child)::after { left: 11px; top: 5px; bottom: auto; width: calc(100% + var(--col-gap) - 11px); height: 1px; }
+  .store.is-pre .store__step:not(.is-lit)::after { background-size: 0% 100%; }
+}
+
+/* ---------- Work ---------- */
+/* Phones + tablets: one column. Laptop and up: two parallel columns (AI track | SecOps track),
+   rows aligned with subgrid so covers, titles and impact lines sit level across each pair. */
+.work-cols { display: none; }
+.work-grid { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: clamp(3.5rem, 10vw, 5.5rem); align-items: start; }
+.work-card { position: relative; min-width: 0; display: grid; align-content: start; transform-style: preserve-3d; }
 
 .work-cover {
   --cv-bg: var(--paper-2); --cv-fg: var(--ink); --cv-acc: var(--accent);
@@ -480,8 +544,8 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
 }
 .cover--ink { --cv-bg: var(--ink); --cv-fg: var(--paper); --cv-acc: var(--accent-inv); }
 .cover--accent { --cv-bg: var(--accent); --cv-fg: var(--on-accent); --cv-acc: var(--on-accent); }
-.cover-art { position: absolute; inset: -7% 0; display: grid; place-items: center; }
-.cover-zoom { width: 100%; height: 100%; transition: transform 1.2s var(--ease); }
+.cover-art { position: absolute; inset: -7% 0; }
+.cover-zoom { position: absolute; inset: 0; transition: transform 1.2s var(--ease); }
 .work-cover::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(32rem circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, .16), transparent 55%);
@@ -491,6 +555,8 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
   .work-card:hover .cover-zoom { transform: scale(1.06); }
   .work-card:hover .work-cover::after { opacity: 1; }
   .work-card:hover h3 { color: var(--accent); }
+  .work-card:hover .impact::before { transform: scaleX(1); }
+  .work-card:hover .tags li { border-color: var(--line-strong); color: var(--ink); }
 }
 
 .cv { width: 100%; height: 100%; display: block; }
@@ -510,16 +576,35 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
 .cv .spin { transform-origin: 240px 180px; animation: spin 7s linear infinite; }
 @keyframes flow { to { stroke-dashoffset: -24; } }
 
-.work-body { container-type: inline-size; margin-top: 1.4rem; display: grid; gap: .9rem; align-content: start; transform: translateZ(28px); }
-.work-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; color: var(--muted); }
+.work-body { margin-top: 1.4rem; display: grid; row-gap: 1.25rem; align-content: start; transform: translateZ(28px); }
+.work-main, .work-aside { display: grid; gap: .9rem; align-content: start; min-width: 0; }
+.work-meta { display: flex; flex-direction: column; gap: .2rem; color: var(--muted); }
 .work-meta b { color: var(--ink); font-weight: 500; }
 .work-track { color: var(--accent); }
 .work-card h3 { font-size: var(--fs-h3); font-weight: 680; letter-spacing: var(--ls-h3); line-height: var(--lh-h3); transition: color var(--dur-fast); }
 .work-card p { color: var(--ink-soft); max-width: 40em; }
-.impact { display: grid; gap: .35rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+.impact { position: relative; display: grid; gap: .35rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+.impact::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .9s var(--ease); }
 .impact .label { color: var(--muted); }
 .impact p { font-family: var(--serif); font-size: clamp(1.12rem, 1.4vw, 1.32rem); line-height: 1.32; color: var(--ink); font-style: italic; }
-@container (max-width: 22rem) { .work-meta { flex-direction: column; } }
+@media (min-width: 600px) {
+  .work-meta { flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .work-cover { aspect-ratio: 16 / 10; }
+  .cover-art { inset: 0; }
+  .work-body { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(1.5rem, 4vw, 2.5rem); }
+}
+@media (min-width: 1024px) {
+  .work-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 5rem); margin-bottom: 1.75rem; }
+  .work-cols span { display: flex; align-items: center; gap: .7em; padding-bottom: .9rem; color: var(--ink); }
+  .work-cols span::before { content: ""; width: 7px; height: 7px; background: var(--accent); flex: none; }
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 5rem); row-gap: clamp(4.5rem, 7vw, 7.5rem); }
+  @supports (grid-template-rows: subgrid) {
+    .work-card { grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+    .work-body { grid-row: span 2; grid-template-rows: subgrid; }
+  }
+}
 
 .more { margin-top: clamp(5rem, 11vw, 11rem); }
 .more__head { align-items: end; row-gap: .75rem; margin-bottom: 1.75rem; }
@@ -625,33 +710,109 @@ html.is-loading .curtain { visibility: visible; transform: translateY(0); animat
 }
 
 /* ---------- Contact ---------- */
-.contact { background: var(--accent); color: var(--on-accent); }
+.contact {
+  --c-soft: color-mix(in srgb, var(--on-accent) 88%, transparent);
+  --c-line: color-mix(in srgb, var(--on-accent) 28%, transparent);
+  --c-edge: color-mix(in srgb, var(--on-accent) 45%, transparent);
+  --c-tint: color-mix(in srgb, var(--on-accent) 7%, transparent);
+  background: var(--accent); color: var(--on-accent); isolation: isolate; overflow: hidden;
+}
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(44rem circle at var(--mx, 78%) var(--my, 18%), color-mix(in srgb, var(--on-accent) 12%, transparent), transparent 65%); transition: background-position var(--dur) var(--ease); }
+.contact .sec__head { margin-bottom: clamp(1.75rem, 3.5vw, 3rem); }
 .contact .rail .label:first-child { color: var(--on-accent); }
 .contact .rail .label:first-child::before { background: var(--on-accent); }
-.contact .rail .label + .label { opacity: .85; }
+.contact .rail .label + .label { color: var(--c-soft); }
 .contact :focus-visible { outline-color: var(--on-accent); }
-.contact__intro { font-size: var(--fs-body-lg); line-height: 1.5; max-width: 36em; opacity: .92; }
+.contact .btn { background: var(--on-accent); color: var(--accent); border-color: var(--on-accent); }
+.contact .btn::before { background: var(--ink); }
+.contact .btn--ghost { background: transparent; color: var(--on-accent); border-color: var(--c-edge); }
+@media (hover: hover) { .contact .btn:hover { color: var(--paper); border-color: var(--ink); } }
+
+.contact__body { row-gap: clamp(2.75rem, 6vw, 4rem); align-items: start; }
+.contact__main { grid-column: 1 / -1; display: grid; gap: clamp(1.5rem, 3vw, 2.25rem); align-content: start; min-width: 0; }
+.contact__intro { font-size: var(--fs-body-lg); line-height: 1.5; max-width: 34em; color: var(--c-soft); }
+
+/* Project brief composer */
+.brief { position: relative; display: grid; gap: clamp(1.6rem, 3vw, 2.1rem); padding: clamp(1.25rem, 3vw, 2.25rem); border: 1px solid var(--c-line); border-radius: var(--radius); background: var(--c-tint); transition: border-color var(--dur) var(--ease); }
+.brief:focus-within { border-color: var(--c-edge); }
+.brief__step { display: grid; gap: .85rem; min-width: 0; }
+.brief__label { display: flex; align-items: baseline; gap: .9em; color: var(--on-accent); }
+.brief__label .n { color: var(--c-soft); }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: .45em; min-height: 2.75rem; padding: 0 1.05em; border-radius: 999px;
+  border: 1px solid var(--c-edge); color: var(--on-accent); font-size: .95rem; font-weight: 550; line-height: 1.2; text-align: left;
+  transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast), scale var(--dur-fast) var(--ease);
+}
+.chip svg { width: 0; height: .85em; flex: none; opacity: 0; transition: width var(--dur) var(--ease), opacity var(--dur-fast); }
+.chip[aria-pressed="true"] { background: var(--on-accent); color: var(--accent); border-color: var(--on-accent); }
+.chip[aria-pressed="true"] svg { width: .85em; opacity: 1; }
+.chip:active { scale: .96; }
+@media (hover: hover) {
+  .chip:hover { background-color: color-mix(in srgb, var(--on-accent) 12%, transparent); }
+  .chip[aria-pressed="true"]:hover { background-color: var(--on-accent); }
+}
+.brief textarea {
+  display: block; width: 100%; min-height: 5.5rem; resize: vertical; padding: .55rem 0;
+  background: transparent; border: 0; border-bottom: 1px solid var(--c-edge); border-radius: 0;
+  color: var(--on-accent); font: inherit; font-size: 1.05rem; line-height: 1.5;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.brief textarea::placeholder { color: color-mix(in srgb, var(--on-accent) 82%, transparent); font-family: var(--serif); font-style: italic; }
+.brief textarea:focus { outline: none; border-bottom-color: var(--on-accent); box-shadow: 0 1px 0 var(--on-accent); }
+.brief__preview { display: grid; gap: .2rem; padding: .8rem .95rem; border: 1px dashed var(--c-line); border-radius: var(--radius); font-family: var(--mono); font-size: .76rem; font-stretch: 87.5%; letter-spacing: .02em; line-height: 1.5; overflow-wrap: anywhere; }
+.brief__preview span:first-child { color: var(--c-soft); }
+.brief__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.brief__hint { font-size: .86rem; line-height: 1.45; color: var(--c-soft); max-width: 40em; }
+
+/* Details: live local time + direct lines */
+.contact__aside { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; align-content: start; min-width: 0; }
+.clock-card { display: grid; gap: .4rem; align-content: start; }
+.clock-card .label { color: var(--c-soft); }
+.clock-big { display: flex; align-items: baseline; font-size: clamp(2.6rem, 4.2vw, 3.8rem); font-weight: 700; font-stretch: 125%; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.clock-big .colon { animation: blink 2s steps(1) infinite; }
+.clock-big small { margin-left: .45em; font-family: var(--mono); font-size: .26em; font-weight: 500; font-stretch: 87.5%; letter-spacing: .08em; }
+@keyframes blink { 50% { opacity: .25; } }
+.tz-note { font-size: var(--fs-small); color: var(--c-soft); }
+.contact__details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem var(--col-gap); }
+.contact__details > div:last-child { grid-column: 1 / -1; }
+.contact__details dt { color: var(--c-soft); margin-bottom: .3rem; }
+.contact__details dd { font-size: 1.02rem; font-weight: 500; line-height: 1.4; }
+.contact__details a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 1px; transition: background-size var(--dur) var(--ease); }
+@media (hover: hover) { .contact__details a:hover { background-size: 0% 1px; background-position: 100% 100%; } }
+
+/* Closing line: the address itself, click to copy */
+.contact__direct { margin-top: clamp(3.5rem, 8vw, 7rem); padding-top: 1.4rem; border-top: 1px solid var(--c-line); row-gap: .9rem; align-items: baseline; }
+.direct-label { grid-column: 1 / -1; color: var(--c-soft); }
+.direct-main { grid-column: 1 / -1; display: grid; gap: .6rem; justify-items: start; min-width: 0; }
 .email-big {
-  display: inline-block; margin-top: var(--space-block); text-align: left;
+  display: inline-block; text-align: left;
   font-size: min(6.3vw, 4.9rem); font-weight: 650; font-stretch: 78%; letter-spacing: -.035em; line-height: 1;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0% 3px no-repeat;
   padding-bottom: .12em;
-  transition: background-size .8s var(--ease);
+  transition: background-size .8s var(--ease), letter-spacing .8s var(--ease);
 }
 .email-big:focus-visible { background-size: 100% 3px; }
-@media (hover: hover) { .email-big:hover { background-size: 100% 3px; } }
-.contact__ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-.contact .btn { background: var(--on-accent); color: var(--accent); border-color: var(--on-accent); }
-.contact .btn::before { background: var(--ink); }
-.contact .btn--ghost { background: transparent; color: var(--on-accent); border-color: color-mix(in srgb, var(--on-accent) 55%, transparent); }
-@media (hover: hover) { .contact .btn:hover { color: var(--paper); border-color: var(--ink); } }
-.contact__details { margin-top: clamp(3rem, 7vw, 6.5rem); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem var(--col-gap); border-top: 1px solid color-mix(in srgb, var(--on-accent) 32%, transparent); padding-top: 1.5rem; }
-.contact__details dt { opacity: .85; margin-bottom: .35rem; }
-.contact__details dd { font-size: 1.02rem; font-weight: 500; line-height: 1.4; }
-.contact__details a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 1px; }
-@media (max-width: 599px) { .contact__ctas .btn { flex: 1 1 100%; } }
-@media (max-width: 359px) { .contact__details { grid-template-columns: minmax(0, 1fr); } }
-@media (min-width: 1024px) { .contact__details { grid-template-columns: repeat(4, minmax(0, 1fr)); } .email-big { font-size: min(4.5vw, 4.9rem); } }
+.direct-hint { color: var(--c-soft); display: inline-flex; align-items: center; gap: .5em; }
+.direct-hint svg { width: 1em; height: 1em; }
+@media (hover: hover) { .email-big:hover { background-size: 100% 3px; letter-spacing: -.025em; } }
+
+@media (max-width: 599px) {
+  .brief__actions .btn { flex: 1 1 100%; }
+  .chips { gap: .4rem; }
+  .chip { padding: 0 .85em; font-size: .88rem; }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .contact__aside { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); column-gap: var(--col-gap); }
+}
+@media (min-width: 1024px) {
+  .contact__main { grid-column: 4 / -1; grid-row: 1; }
+  .contact__aside { grid-column: 1 / span 3; grid-row: 1; padding-top: .3rem; }
+  .contact__details { grid-template-columns: minmax(0, 1fr); }
+  .direct-label { grid-column: 1 / span 3; }
+  .direct-main { grid-column: 4 / -1; }
+  .email-big { font-size: min(4.6vw, 5.4rem); }
+}
 
 /* ---------- Footer ---------- */
 .footer { padding-block: clamp(2.5rem, 6vw, 5rem) calc(1.75rem + env(safe-area-inset-bottom, 0px)); overflow: hidden; }
@@ -773,6 +934,7 @@ html.lenis, html.lenis body { height: auto; }
             <li>Agentic AI&nbsp;· A2A</li>
             <li>VR / AVR&nbsp;· SecOps</li>
             <li>Rapid7&nbsp;· Orca&nbsp;· OpenCTI</li>
+            <li>Store apps&nbsp;· Certification</li>
             <li>CMDB&nbsp;· IRE</li>
             <li>IntegrationHub ETL</li>
           </ul>
@@ -801,40 +963,41 @@ html.lenis, html.lenis body { height: auto; }
 
   <!-- ================= MARQUEE ================= -->
   <div class="marquee" role="region" aria-label="Platforms and integrations">
-    <p class="sr-only">Now Assist, NASK, Build Agent, A2A, Virtual Agent, Vulnerability Response, AVR, Rapid7, Contrast Security, OpenCTI, Orca Security, IntegrationHub ETL, IRE, CMDB.</p>
+    <p class="sr-only">Now Assist, NASK, Build Agent, A2A, Virtual Agent, Vulnerability Response, AVR, Rapid7, Contrast Security, OpenCTI, Orca Security, IntegrationHub ETL, IRE, CMDB, Store Certification.</p>
     <div class="marquee__track" aria-hidden="true">
       <div class="marquee__group">
-        <span class="marquee__item">Now Assist</span><span class="marquee__item">NASK</span><span class="marquee__item">Build Agent</span><span class="marquee__item">A2A</span><span class="marquee__item">Virtual Agent</span><span class="marquee__item">Vulnerability Response</span><span class="marquee__item">AVR</span><span class="marquee__item">Rapid7</span><span class="marquee__item">Contrast Security</span><span class="marquee__item">OpenCTI</span><span class="marquee__item">Orca Security</span><span class="marquee__item">IntegrationHub ETL</span><span class="marquee__item">IRE</span><span class="marquee__item">CMDB</span>
+        <span class="marquee__item">Now Assist</span><span class="marquee__item">NASK</span><span class="marquee__item">Build Agent</span><span class="marquee__item">A2A</span><span class="marquee__item">Virtual Agent</span><span class="marquee__item">Vulnerability Response</span><span class="marquee__item">AVR</span><span class="marquee__item">Rapid7</span><span class="marquee__item">Contrast Security</span><span class="marquee__item">OpenCTI</span><span class="marquee__item">Orca Security</span><span class="marquee__item">IntegrationHub ETL</span><span class="marquee__item">IRE</span><span class="marquee__item">CMDB</span><span class="marquee__item">Store Certification</span>
       </div>
     </div>
   </div>
 
   <!-- ================= ABOUT ================= -->
-  <section class="sec" id="about" aria-labelledby="about-title">
+  <section class="sec about" id="about" aria-labelledby="about-title">
+    <h2 class="sr-only" id="about-title">About Pavan</h2>
     <div class="wrap grid12 about__grid">
       <div class="rail" data-reveal>
         <p class="label">About</p>
         <p class="label muted">Andhra Pradesh, India</p>
       </div>
       <div class="content">
-        <h2 class="sr-only" id="about-title">About Pavan</h2>
         <p class="about__lead" data-words>I work where ServiceNow's AI meets its security stack. One track is <em>AI-first development</em> with Now Assist, NASK, autonomous agents and A2A orchestration. The other is <em>SecOps engineering</em>, bringing scanner, threat-intelligence and cloud asset data into the platform at enterprise volume.</p>
-        <div class="about__cols">
-          <div class="about__text" data-reveal>
-            <p>I'm a ServiceNow Certified Application Developer with 3.5 years of enterprise-grade platform experience at Sacumen Technology. I deliver Store-certified scoped applications, IRE-based CMDB ingestion, IntegrationHub ETL pipelines with Robot Transform Maps, and enterprise SSO.</p>
-            <p>On the AI side I build with Now Assist, NASK, the Build Agent framework and agent-to-agent collaboration. On the security side I've integrated Rapid7 (InsightVM, AppSec, ITSM), Contrast Security, OpenCTI / Filigran and Orca Security with Vulnerability Response, AVR, ITSM and the CMDB.</p>
-          </div>
-          <div class="facts-wrap" data-reveal>
-            <dl class="facts">
-              <div><dt class="label">Based in</dt><dd>Andhra Pradesh, India</dd></div>
-              <div><dt class="label">Works</dt><dd>Open to global &amp; remote</dd></div>
-              <div><dt class="label">Certified</dt><dd>ServiceNow Certified Application Developer (CAD)</dd></div>
-              <div><dt class="label">Recognition</dt><dd>Employee of the Month&nbsp;· Leadership Appreciation Award</dd></div>
-              <div><dt class="label">Languages</dt><dd>English, Telugu, Kannada</dd></div>
-              <div><dt class="label">Education</dt><dd>B.Tech, Civil Engineering&nbsp;· RK College of Engineering, 2019–2022</dd></div>
-            </dl>
-          </div>
-        </div>
+      </div>
+      <div class="about__text" data-reveal>
+        <p class="about__label label" data-rule>Profile</p>
+        <p>I'm a ServiceNow Certified Application Developer with 3.5 years of enterprise-grade platform experience at Sacumen Technology. I deliver Store-certified scoped applications, from build through ServiceNow Store application submission and the complete certification process. I also build IRE-based CMDB ingestion, IntegrationHub ETL pipelines with Robot Transform Maps, and enterprise SSO.</p>
+        <p>On the AI side I build with Now Assist, NASK, the Build Agent framework and agent-to-agent collaboration. On the security side I've integrated Rapid7 (InsightVM, AppSec, ITSM), Contrast Security, OpenCTI / Filigran and Orca Security with Vulnerability Response, AVR, ITSM and the CMDB.</p>
+      </div>
+      <div class="about__facts" data-reveal>
+        <p class="about__label label" data-rule>At a glance</p>
+        <dl class="facts">
+          <div data-rule style="--i:0"><dt class="label">Based in</dt><dd>Andhra Pradesh, India</dd></div>
+          <div data-rule style="--i:1"><dt class="label">Works</dt><dd>Open to global &amp; remote</dd></div>
+          <div data-rule style="--i:2"><dt class="label">Certified</dt><dd>ServiceNow Certified Application Developer (CAD)</dd></div>
+          <div data-rule style="--i:3"><dt class="label">Store apps</dt><dd>ServiceNow Store submission and the complete certification process</dd></div>
+          <div data-rule style="--i:4"><dt class="label">Recognition</dt><dd>Employee of the Month&nbsp;· Leadership Appreciation Award</dd></div>
+          <div data-rule style="--i:5"><dt class="label">Languages</dt><dd>English, Telugu, Kannada</dd></div>
+          <div data-rule style="--i:6"><dt class="label">Education</dt><dd>B.Tech, Civil Engineering&nbsp;· RK College of Engineering, 2019–2022</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -845,7 +1008,7 @@ html.lenis, html.lenis body { height: auto; }
       <div class="grid12 sec__head">
         <div class="rail" data-reveal>
           <p class="label">Expertise</p>
-          <p class="label muted">6 areas&nbsp;· 57 skills</p>
+          <p class="label muted">7 areas&nbsp;· 61 skills</p>
         </div>
         <h2 class="sec__title" id="expertise-title" data-stretch>Two disciplines, <span class="wide">one platform.</span></h2>
       </div>
@@ -888,6 +1051,25 @@ html.lenis, html.lenis body { height: auto; }
           <ul class="tags"><li>JavaScript</li><li>Glide Scripting</li><li>REST / SOAP</li><li>OAuth 2.0</li><li>SAML 2.0</li><li>Java Connectors</li><li>Async Processing</li><li>Pagination Logic</li><li>Exponential Backoff</li><li>Error Handling</li><li>Performance Optimisation</li></ul>
         </article>
       </div>
+
+      <div class="store" id="store" data-spot>
+        <div class="store__head">
+          <div class="store__titles" data-reveal>
+            <div class="store__top label"><span>ServiceNow Store</span><span>4 skills</span></div>
+            <h3>Store submission <span class="wide">&amp; certification</span></h3>
+          </div>
+          <div class="store__intro" data-reveal>
+            <p>I take scoped applications from build to a Store-certified release, including ServiceNow Store application submission and the complete certification process.</p>
+            <ul class="tags"><li>Store App Submission</li><li>Store Certification</li><li>Scoped Applications</li><li>Cross-scope Access Policies</li></ul>
+          </div>
+        </div>
+        <ol class="store__steps" aria-label="From build to Store-certified release">
+          <li class="store__step"><span class="store__num label">01</span><h4>Build</h4><p>Scoped application with UI Builder workspaces, GlideRecordSecure ACLs, cross-scope access policies and role-based access.</p></li>
+          <li class="store__step"><span class="store__num label">02</span><h4>Submit</h4><p>Application submission to the ServiceNow Store.</p></li>
+          <li class="store__step"><span class="store__num label">03</span><h4>Certify</h4><p>The complete Store certification process, handled end to end.</p></li>
+          <li class="store__step"><span class="store__num label">04</span><h4>Release</h4><p>Delivered as a Store-certified application.</p></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -902,6 +1084,7 @@ html.lenis, html.lenis body { height: auto; }
         <h2 class="sec__title" id="work-title" data-stretch>Built inside <span class="wide">ServiceNow.</span></h2>
       </div>
 
+      <div class="work-cols label" aria-hidden="true"><span data-rule>AI-first development</span><span data-rule>SecOps engineering</span></div>
       <div class="work-grid">
         <article class="work-card" id="p-triage" data-tilt>
           <div class="work-cover cover--ink" data-cover>
@@ -925,11 +1108,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">AI&nbsp;· Build Agent</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
-            <h3>Autonomous Vulnerability Triage Agent</h3>
-            <p>An AI agent built on the Build Agent framework. I defined its goal and persona, registered typed tools (GlideRecord, Scripted REST, Flow triggers) and implemented the ReAct loop of Reason, Act and Observe.</p>
-            <div class="impact"><span class="label">Impact</span><p>Guardrails built in: a cap on iterations, human-in-the-loop gates and a full audit log of every tool call.</p></div>
-            <ul class="tags"><li>Build Agent</li><li>ReAct</li><li>GlideRecord</li><li>Scripted REST</li><li>Flow Designer</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">AI&nbsp;· Build Agent</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
+              <h3>Autonomous Vulnerability Triage Agent</h3>
+              <p>An AI agent built on the Build Agent framework. I defined its goal and persona, registered typed tools (GlideRecord, Scripted REST, Flow triggers) and implemented the ReAct loop of Reason, Act and Observe.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>Guardrails built in: a cap on iterations, human-in-the-loop gates and a full audit log of every tool call.</p></div>
+              <ul class="tags"><li>Build Agent</li><li>ReAct</li><li>GlideRecord</li><li>Scripted REST</li><li>Flow Designer</li></ul>
+            </div>
           </div>
         </article>
 
@@ -958,11 +1145,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">CMDB&nbsp;· ETL</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
-            <h3>Orca Security&nbsp;→ CMDB</h3>
-            <p>A large-scale CMDB integration built on Scheduled Import Data Streams and an IntegrationHub ETL pipeline with Robot Transform Map.</p>
-            <div class="impact"><span class="label">Impact</span><p>90K+ AWS, Azure and GCP assets across 10 CI classes, with IRE identification and multi-source reconciliation protecting CMDB integrity.</p></div>
-            <ul class="tags"><li>IntegrationHub ETL</li><li>Robot Transform Map</li><li>IRE</li><li>Scheduled Data Streams</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">CMDB&nbsp;· ETL</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
+              <h3>Orca Security&nbsp;→ CMDB</h3>
+              <p>A large-scale CMDB integration built on Scheduled Import Data Streams and an IntegrationHub ETL pipeline with Robot Transform Map.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>90K+ AWS, Azure and GCP assets across 10 CI classes, with IRE identification and multi-source reconciliation protecting CMDB integrity.</p></div>
+              <ul class="tags"><li>IntegrationHub ETL</li><li>Robot Transform Map</li><li>IRE</li><li>Scheduled Data Streams</li></ul>
+            </div>
           </div>
         </article>
 
@@ -984,11 +1175,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">AI&nbsp;· NASK</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
-            <h3>AI Summaries for Vulnerable Items</h3>
-            <p>NASK summarisation skills that combine CVSS score, affected CI criticality, scanner findings and open task notes into one analyst-ready summary.</p>
-            <div class="impact"><span class="label">Impact</span><p>Analyst triage reading time reduced by ~60%.</p></div>
-            <ul class="tags"><li>NASK</li><li>AI Skill Designer</li><li>Now Assist</li><li>UI Builder</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">AI&nbsp;· NASK</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
+              <h3>AI Summaries for Vulnerable Items</h3>
+              <p>NASK summarisation skills that combine CVSS score, affected CI criticality, scanner findings and open task notes into one analyst-ready summary.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>Analyst triage reading time reduced by ~60%.</p></div>
+              <ul class="tags"><li>NASK</li><li>AI Skill Designer</li><li>Now Assist</li><li>UI Builder</li></ul>
+            </div>
           </div>
         </article>
 
@@ -1013,11 +1208,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">AVR&nbsp;· Bi-directional</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
-            <h3>Rapid7 AppSec&nbsp;⇄ AVR</h3>
-            <p>A bi-directional integration covering the full application vulnerability lifecycle. Findings flow into sn_avr_vulnerable_item and remediation status syncs back to Rapid7.</p>
-            <div class="impact"><span class="label">Impact</span><p>Closed-loop vulnerability tracking across development and security teams.</p></div>
-            <ul class="tags"><li>Application VR</li><li>Inbound ingestion</li><li>Outbound status sync</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">AVR&nbsp;· Bi-directional</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
+              <h3>Rapid7 AppSec&nbsp;⇄ AVR</h3>
+              <p>A bi-directional integration covering the full application vulnerability lifecycle. Findings flow into sn_avr_vulnerable_item and remediation status syncs back to Rapid7.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>Closed-loop vulnerability tracking across development and security teams.</p></div>
+              <ul class="tags"><li>Application VR</li><li>Inbound ingestion</li><li>Outbound status sync</li></ul>
+            </div>
           </div>
         </article>
 
@@ -1044,11 +1243,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">AI&nbsp;· A2A</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
-            <h3>A2A Orchestrator for Vulnerability Response</h3>
-            <p>A VR-domain agent-to-agent model. An orchestrator breaks triage goals down and delegates CI lookup, risk scoring and task creation to specialist sub-agents.</p>
-            <div class="impact"><span class="label">Impact</span><p>CMDB, VR and Incident agents coordinate through an agent registry, structured JSON messages and shared cross-agent context.</p></div>
-            <ul class="tags"><li>A2A Collaboration</li><li>Agent Registry</li><li>JSON Messaging</li><li>Vulnerability Response</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">AI&nbsp;· A2A</span><span>Role&nbsp;· <b>AI Developer</b></span></div>
+              <h3>A2A Orchestrator for Vulnerability Response</h3>
+              <p>A VR-domain agent-to-agent model. An orchestrator breaks triage goals down and delegates CI lookup, risk scoring and task creation to specialist sub-agents.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>CMDB, VR and Incident agents coordinate through an agent registry, structured JSON messages and shared cross-agent context.</p></div>
+              <ul class="tags"><li>A2A Collaboration</li><li>Agent Registry</li><li>JSON Messaging</li><li>Vulnerability Response</li></ul>
+            </div>
           </div>
         </article>
 
@@ -1077,11 +1280,15 @@ html.lenis, html.lenis body { height: auto; }
             </div></div>
           </div>
           <div class="work-body">
-            <div class="work-meta label"><span class="work-track">VR&nbsp;· Inbound</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
-            <h3>Rapid7 InsightVM&nbsp;→ Vulnerability Response</h3>
-            <p>Infrastructure vulnerability ingestion using the Rapid7 Detection API and IRE CI matching.</p>
-            <div class="impact"><span class="label">Impact</span><p>Async batch processing for high-volume enterprise scans, with pagination, exponential-backoff retry and duplicate prevention through VIT deduplication.</p></div>
-            <ul class="tags"><li>Detection API</li><li>IRE</li><li>Async Processing</li><li>Exponential Backoff</li><li>VIT Processing</li></ul>
+            <div class="work-main">
+              <div class="work-meta label"><span class="work-track">VR&nbsp;· Inbound</span><span>Role&nbsp;· <b>Integration Specialist</b></span></div>
+              <h3>Rapid7 InsightVM&nbsp;→ Vulnerability Response</h3>
+              <p>Infrastructure vulnerability ingestion using the Rapid7 Detection API and IRE CI matching.</p>
+            </div>
+            <div class="work-aside">
+              <div class="impact"><span class="label">Impact</span><p>Async batch processing for high-volume enterprise scans, with pagination, exponential-backoff retry and duplicate prevention through VIT deduplication.</p></div>
+              <ul class="tags"><li>Detection API</li><li>IRE</li><li>Async Processing</li><li>Exponential Backoff</li><li>VIT Processing</li></ul>
+            </div>
           </div>
         </article>
       </div>
@@ -1142,7 +1349,8 @@ html.lenis, html.lenis body { height: auto; }
                     <li>Delivered Rapid7 integrations for InsightVM (VR), AppSec (AVR, bi-directional), ITSM and Config Compliance.</li>
                     <li>Onboarded Contrast Security findings into AVR and OpenCTI threat intelligence into VR.</li>
                     <li>Built the Orca Security&nbsp;→ CMDB pipeline, ingesting 90K+ AWS, Azure and GCP assets across 10 CI classes.</li>
-                    <li>Shipped Store-certified scoped apps, MID Server connectivity, Scripted REST APIs with OAuth 2.0 and RSA SAML 2.0 SSO.</li>
+                    <li>Took scoped apps through ServiceNow Store application submission and the complete certification process to Store-certified release.</li>
+                    <li>Configured MID Server connectivity, Scripted REST APIs with OAuth 2.0 and RSA SAML 2.0 SSO.</li>
                   </ul>
                 </div>
               </div>
@@ -1188,7 +1396,7 @@ html.lenis, html.lenis body { height: auto; }
       </div>
       <dl class="stack">
         <div class="stack-row grid12" data-reveal><dt class="label">ServiceNow AI</dt><dd><span class="stack-item">Now Assist</span><span class="stack-item">NASK</span><span class="stack-item">AI Skill Designer</span><span class="stack-item">Build Agent</span><span class="stack-item">Virtual Agent</span></dd></div>
-        <div class="stack-row grid12" data-reveal><dt class="label">ServiceNow platform</dt><dd><span class="stack-item">Vulnerability Response</span><span class="stack-item">AVR</span><span class="stack-item">SIR</span><span class="stack-item">ITSM</span><span class="stack-item">CMDB</span><span class="stack-item">UI Builder</span><span class="stack-item">Flow Designer</span><span class="stack-item">IntegrationHub</span><span class="stack-item">App Engine Studio</span><span class="stack-item">Service Graph Connector</span><span class="stack-item">MID Server</span></dd></div>
+        <div class="stack-row grid12" data-reveal><dt class="label">ServiceNow platform</dt><dd><span class="stack-item">ServiceNow Store</span><span class="stack-item">Vulnerability Response</span><span class="stack-item">AVR</span><span class="stack-item">SIR</span><span class="stack-item">ITSM</span><span class="stack-item">CMDB</span><span class="stack-item">UI Builder</span><span class="stack-item">Flow Designer</span><span class="stack-item">IntegrationHub</span><span class="stack-item">App Engine Studio</span><span class="stack-item">Service Graph Connector</span><span class="stack-item">MID Server</span></dd></div>
         <div class="stack-row grid12" data-reveal><dt class="label">Security platforms</dt><dd><span class="stack-item">Rapid7 InsightVM</span><span class="stack-item">Rapid7 AppSec</span><span class="stack-item">Contrast Security</span><span class="stack-item">OpenCTI / Filigran</span><span class="stack-item">Orca Security</span><span class="stack-item">RSA</span></dd></div>
         <div class="stack-row grid12" data-reveal><dt class="label">Cloud asset sources</dt><dd><span class="stack-item">AWS</span><span class="stack-item">Azure</span><span class="stack-item">GCP</span></dd></div>
         <div class="stack-row grid12" data-reveal><dt class="label">Languages &amp; APIs</dt><dd><span class="stack-item">JavaScript</span><span class="stack-item">Glide</span><span class="stack-item">REST</span><span class="stack-item">SOAP</span><span class="stack-item">GraphQL</span><span class="stack-item">JSON</span><span class="stack-item">Java Connectors</span></dd></div>
@@ -1229,9 +1437,9 @@ html.lenis, html.lenis body { height: auto; }
           <div class="svc__proof"><span class="label">Proof</span><a class="proof-link" href="#p-orca">Orca Security <span class="arw" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span></a></div>
         </article>
         <article class="svc grid12" data-spot data-reveal>
-          <h3>Scoped applications</h3>
-          <p>Store-certified scoped apps with UI Builder workspaces, Flow Designer, Scripted REST APIs, ACLs and role-based access, plus enterprise SSO with SAML 2.0.</p>
-          <div class="svc__proof"><span class="label">Proof</span><a class="proof-link" href="#experience">Experience <span class="arw" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span></a></div>
+          <h3>ServiceNow Store apps</h3>
+          <p>Scoped apps built for the ServiceNow Store and taken through application submission and the complete certification process to a Store-certified release. UI Builder workspaces, Flow Designer, Scripted REST APIs, ACLs, role-based access and enterprise SSO with SAML 2.0.</p>
+          <div class="svc__proof"><span class="label">Proof</span><a class="proof-link" href="#store">Store certification <span class="arw" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span></a></div>
         </article>
         <article class="svc grid12" data-spot data-reveal>
           <h3>Virtual Agent experiences</h3>
@@ -1243,7 +1451,7 @@ html.lenis, html.lenis body { height: auto; }
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section class="sec contact" id="contact" aria-labelledby="contact-title">
+  <section class="sec contact" id="contact" aria-labelledby="contact-title" data-spot>
     <div class="wrap">
       <div class="grid12 sec__head">
         <div class="rail">
@@ -1252,20 +1460,58 @@ html.lenis, html.lenis body { height: auto; }
         </div>
         <h2 class="sec__title" id="contact-title" data-stretch>Have a ServiceNow <span class="wide">build in mind?</span></h2>
       </div>
-      <div class="grid12">
-        <div class="content">
-          <p class="contact__intro">Now Assist skills, AI agents, security tool integrations or CMDB pipelines. Tell me what you're planning and let's talk about how to build it.</p>
-          <button class="email-big" type="button" data-copy data-cursor="Copy" aria-label="Copy email address pavankumarkunapu2000@gmail.com"><span data-email-text>pavankumarkunapu2000<wbr>@gmail.com</span></button>
-          <div class="contact__ctas">
-            <a class="btn" href="mailto:pavankumarkunapu2000@gmail.com?subject=Project%20inquiry" data-magnetic><span class="mag-inner"><span class="roll" data-text="Email me"><span>Email me</span></span><span class="arw arw--ne" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span></span></a>
-            <button class="btn btn--ghost" type="button" data-copy data-copy-feedback data-magnetic><span class="mag-inner"><span class="roll" data-text="Copy email"><span>Copy email</span></span><svg width="16" height="16" aria-hidden="true"><use href="#i-copy"/></svg></span></button>
+
+      <div class="grid12 contact__body">
+        <div class="contact__main">
+          <p class="contact__intro" data-reveal>Now Assist skills, AI agents, security tool integrations, CMDB pipelines or a ServiceNow Store app. Pick what you need, add a line about the project, and your email opens with the brief already written.</p>
+
+          <div class="brief" data-reveal>
+            <div class="brief__step">
+              <p class="brief__label label" id="brief-need"><span class="n">01</span><span>What do you need?</span></p>
+              <div class="chips" role="group" aria-labelledby="brief-need">
+                <button class="chip" type="button" id="chip-nowassist" aria-pressed="false" data-value="Now Assist skills"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Now Assist skills</button>
+                <button class="chip" type="button" id="chip-agents" aria-pressed="false" data-value="AI agents &amp; A2A"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>AI agents &amp; A2A</button>
+                <button class="chip" type="button" id="chip-security" aria-pressed="false" data-value="Security tool integration"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Security tool integration</button>
+                <button class="chip" type="button" id="chip-cmdb" aria-pressed="false" data-value="CMDB pipeline"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>CMDB pipeline</button>
+                <button class="chip" type="button" id="chip-store" aria-pressed="false" data-value="ServiceNow Store app"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>ServiceNow Store app</button>
+                <button class="chip" type="button" id="chip-va" aria-pressed="false" data-value="Virtual Agent"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Virtual Agent</button>
+              </div>
+            </div>
+            <div class="brief__step">
+              <label class="brief__label label" for="brief-note"><span class="n">02</span><span>A line about the project <span class="n">(optional)</span></span></label>
+              <textarea id="brief-note" rows="3" placeholder="e.g. We want Rapid7 findings in Vulnerability Response with remediation tasks created automatically."></textarea>
+            </div>
+            <div class="brief__step">
+              <p class="brief__label label"><span class="n">03</span><span>Send it</span></p>
+              <p class="brief__preview" aria-live="polite"><span>Subject</span><span data-brief-subject>Project inquiry</span></p>
+              <div class="brief__actions">
+                <a class="btn" href="mailto:pavankumarkunapu2000@gmail.com?subject=Project%20inquiry" data-brief-mail data-magnetic><span class="mag-inner"><span class="roll" data-text="Email this brief"><span>Email this brief</span></span><span class="arw arw--ne" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span></span></a>
+                <button class="btn btn--ghost" type="button" data-brief-copy data-magnetic><span class="mag-inner"><span class="roll" data-text="Copy brief"><span>Copy brief</span></span><svg width="16" height="16" aria-hidden="true"><use href="#i-copy"/></svg></span></button>
+              </div>
+              <p class="brief__hint">Email this brief opens your email app with everything filled in. If nothing opens, use Copy brief and paste it into a message to pavankumarkunapu2000@gmail.com.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact__aside" aria-label="Contact details" data-reveal>
+          <div class="clock-card">
+            <span class="label">Local time&nbsp;· Andhra Pradesh</span>
+            <p class="clock-big"><span data-clock-h>--</span><span class="colon">:</span><span data-clock-m>--</span><small>IST</small></p>
+            <p class="tz-note" data-tz-note>UTC+5:30</p>
           </div>
           <dl class="contact__details">
             <div><dt class="label">Phone</dt><dd><a href="tel:+919347903017">+91 93479 03017</a></dd></div>
             <div><dt class="label">Based in</dt><dd>Andhra Pradesh, India</dd></div>
-            <div><dt class="label">Local time</dt><dd><span data-clock>UTC+5:30</span> IST</dd></div>
             <div><dt class="label">Languages</dt><dd>English, Telugu, Kannada</dd></div>
           </dl>
+        </aside>
+      </div>
+
+      <div class="grid12 contact__direct" data-reveal>
+        <p class="label direct-label">Or write directly</p>
+        <div class="direct-main">
+          <button class="email-big" type="button" data-copy data-cursor="Copy" aria-label="Copy email address pavankumarkunapu2000@gmail.com"><span data-email-text>pavankumarkunapu2000<wbr>@gmail.com</span></button>
+          <span class="label direct-hint"><svg aria-hidden="true"><use href="#i-copy"/></svg><span data-copy-hint>Click to copy</span></span>
         </div>
       </div>
     </div>
@@ -1354,10 +1600,25 @@ html.lenis, html.lenis body { height: auto; }
   /* ---------- Clock + year ---------- */
   try {
     const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false });
-    const tick = () => $$('[data-clock]').forEach(el => { el.textContent = fmt.format(new Date()); });
+    const tick = () => {
+      const now = new Date();
+      $$('[data-clock]').forEach(el => { el.textContent = fmt.format(now); });
+      const parts = fmt.formatToParts(now);
+      const get = t => (parts.find(x => x.type === t) || {}).value || '--';
+      $$('[data-clock-h]').forEach(el => { el.textContent = get('hour'); });
+      $$('[data-clock-m]').forEach(el => { el.textContent = get('minute'); });
+    };
     tick(); setInterval(tick, 20000);
   } catch (e) {}
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  const tzNote = $('[data-tz-note]');
+  if (tzNote) {
+    const diff = 330 + new Date().getTimezoneOffset();            // IST is UTC+5:30
+    const a = Math.abs(diff), h = Math.floor(a / 60), m = a % 60;
+    const span = (h ? h + 'h' : '') + (m ? (h ? ' ' : '') + m + 'm' : '');
+    tzNote.textContent = 'UTC+5:30 · ' + (diff === 0 ? 'same time zone as you' : span + (diff > 0 ? ' ahead of you' : ' behind you'));
+  }
+  $$('[data-copy-hint]').forEach(el => { el.textContent = fine ? 'Click to copy' : 'Tap to copy'; });
 
   /* ---------- Toast + copy email with inline feedback ---------- */
   const toast = $('.toast');
@@ -1383,6 +1644,45 @@ html.lenis, html.lenis body { height: auto; }
     catch (e) { selectEmail(); }
   }));
 
+  /* ---------- Project brief composer ---------- */
+  const brief = $('.brief');
+  if (brief) {
+    const chips = $$('.chip', brief);
+    const note = $('#brief-note');
+    const subj = $('[data-brief-subject]');
+    const mail = $('[data-brief-mail]');
+    const copyBtn = $('[data-brief-copy]');
+    const compose = () => {
+      const picked = chips.filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.value);
+      const subject = 'Project inquiry' + (picked.length ? ': ' + picked.join(', ') : '');
+      const lines = ['Hi Pavan,', '', picked.length ? "I'm looking for help with: " + picked.join(', ') + '.' : "I'd like to talk about a ServiceNow project."];
+      const extra = note.value.trim();
+      if (extra) lines.push('', extra);
+      lines.push('', 'Thanks,');
+      return { subject, body: lines.join('\n') };
+    };
+    const update = () => {
+      const { subject, body } = compose();
+      subj.textContent = subject;
+      mail.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    };
+    chips.forEach(c => c.addEventListener('click', () => { c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true')); update(); }));
+    note.addEventListener('input', update);
+    copyBtn.addEventListener('click', () => {
+      const { subject, body } = compose();
+      const text = 'To: ' + EMAIL + '\nSubject: ' + subject + '\n\n' + body;
+      const roll = $('.roll', copyBtn), inner = roll.firstElementChild;
+      const done = () => {
+        say('Brief copied. Paste it into an email to ' + EMAIL);
+        roll.dataset.text = 'Copied'; inner.textContent = 'Copied';
+        clearTimeout(copyBtn._t); copyBtn._t = setTimeout(() => { roll.dataset.text = 'Copy brief'; inner.textContent = 'Copy brief'; }, 2000);
+      };
+      const fail = () => { note.focus(); note.select(); say('Copying is blocked here. Email ' + EMAIL + ' directly.'); };
+      try { navigator.clipboard.writeText(text).then(done, fail); } catch (e) { fail(); }
+    });
+    update();
+  }
+
   /* ---------- Smooth scrolling (Lenis; native touch scrolling is left alone) ---------- */
   let lenis = null;
   if (!reduce && window.Lenis) {
@@ -1391,6 +1691,11 @@ html.lenis, html.lenis body { height: auto; }
     else { const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf); }
   }
   const scrollY_ = () => (lenis ? lenis.scroll : window.scrollY);
+  if (ST) {
+    let stRaf = 0;
+    addEventListener('scroll', () => { if (!stRaf) stRaf = requestAnimationFrame(() => { stRaf = 0; ST.update(); }); }, { passive: true });
+    ST.addEventListener('refresh', () => requestAnimationFrame(() => ST.update()));
+  }
   const scrollToEl = (el, immediate) => {
     const isTop = el.id === 'top';
     if (lenis) { lenis.scrollTo(isTop ? 0 : el, { offset: isTop ? 0 : -8, immediate: !!immediate, duration: 1.4 }); return; }
@@ -1693,6 +1998,13 @@ html.lenis, html.lenis body { height: auto; }
   const aboutWords = splitWords($('[data-words]'));
   if (motion) {
     const belowFold = el => el.getBoundingClientRect().top > innerHeight * 0.92;
+    // On long jumps (nav, scrollbar, End key) many items enter at once: settle the ones already
+    // scrolled past instantly and animate only what is on screen, so nothing waits its turn.
+    const split = batch => {
+      const vis = [], passed = [];
+      batch.forEach(el => { const r = el.getBoundingClientRect(); (r.bottom > 0 && r.top < innerHeight ? vis : passed).push(el); });
+      return { vis, passed };
+    };
 
     // Hero intro: letters rise out of their lines, then supporting copy settles in.
     heroTitle.classList.add('is-masked');
@@ -1722,15 +2034,59 @@ html.lenis, html.lenis body { height: auto; }
     G.fromTo(aboutWords, { opacity: 0.24 }, { opacity: 1, ease: 'none', stagger: 0.1, scrollTrigger: { trigger: '[data-words]', start: 'top 82%', end: 'bottom 55%', scrub: 0.4 } });
 
     // One reveal for everything: rise from a faint, still-readable state, batched so neighbours stagger together.
-    const reveal = $$('[data-reveal]').concat(rich ? $$('.work-body') : $$('.work-card')).filter(belowFold);
+    const reveal = $$('[data-reveal]').concat(rich ? [] : $$('.work-card')).filter(belowFold);
     G.set(reveal, { y: M.rise, opacity: M.from });
-    ST.batch(reveal, { start: 'top 88%', once: true, onEnter: batch => G.to(batch, { y: 0, opacity: 1, stagger: M.stagger, overwrite: true }) });
+    ST.batch(reveal, { start: 'top 88%', once: true, onEnter: batch => {
+      const { vis, passed } = split(batch);
+      if (passed.length) G.set(passed, { y: 0, opacity: 1, overwrite: true });
+      if (vis.length) G.to(vis, { y: 0, opacity: 1, stagger: M.stagger, overwrite: true });
+    } });
 
-    // Desktop: project covers open up and their artwork drifts inside the frame.
-    if (rich) $$('[data-cover]').forEach(c => {
-      G.fromTo(c, { clipPath: 'inset(8% 6% 8% 6% round 4px)' }, { clipPath: 'inset(0% 0% 0% 0% round 4px)', ease: 'none', scrollTrigger: { trigger: c, start: 'top 96%', end: 'top 45%', scrub: 0.5 } });
-      G.fromTo($('.cover-art', c), { yPercent: -3 }, { yPercent: 3, ease: 'none', scrollTrigger: { trigger: c, start: 'top bottom', end: 'bottom top', scrub: true } });
-    });
+    // Desktop: each row of project cards opens together. Covers unmask, artwork settles,
+    // then the text lines rise in order. The right-hand card follows a beat behind.
+    if (rich) {
+      const parts = card => $$('.work-main > *, .work-aside > *', card);
+      const cards = $$('.work-card').filter(belowFold);
+      cards.forEach(card => {
+        G.set($('.work-cover', card), { clipPath: 'inset(9% 7% 9% 7% round 4px)' });
+        G.set($('.cv', card), { scale: 1.12 });
+        G.set(parts(card), { y: 24, opacity: M.from });
+      });
+      ST.batch(cards, { start: 'top 85%', once: true, onEnter: batch => split(batch).vis.concat(split(batch).passed).forEach((card, i, all) => {
+        const onScreen = split([card]).vis.length > 0;
+        const d = onScreen ? Math.min(i, 1) * 0.14 : 0;
+        if (!onScreen) {
+          G.set($('.work-cover', card), { clipPath: 'inset(0% 0% 0% 0% round 4px)' });
+          G.set($('.cv', card), { scale: 1 });
+          G.set(parts(card), { y: 0, opacity: 1 });
+          return;
+        }
+        G.to($('.work-cover', card), { clipPath: 'inset(0% 0% 0% 0% round 4px)', duration: 1.4, delay: d });
+        G.to($('.cv', card), { scale: 1, duration: 1.6, delay: d });
+        G.to(parts(card), { y: 0, opacity: 1, duration: M.dur, stagger: 0.05, delay: d + 0.25 });
+      }) });
+      $$('[data-cover]').forEach(c => {
+        G.fromTo($('.cover-art', c), { yPercent: -3 }, { yPercent: 3, ease: 'none', scrollTrigger: { trigger: c, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+    }
+
+    // Hairlines draw from the left as they arrive.
+    const rules = $$('[data-rule]').filter(belowFold);
+    rules.forEach(r => r.classList.add('rule-pre'));
+    ST.batch(rules, { start: 'top 90%', once: true, onEnter: b => b.forEach(r => r.classList.remove('rule-pre')) });
+
+    // Store path: each step lights in order and its connector fills into the next node.
+    const store = $('.store');
+    if (store && belowFold($('.store__steps', store))) {
+      const steps = $$('.store__step', store);
+      store.classList.add('is-pre');
+      G.set(steps, { y: 20, opacity: M.from });
+      const tl = G.timeline({ paused: true });
+      steps.forEach((st, i) => {
+        tl.to(st, { y: 0, opacity: 1, duration: M.durFast + 0.2, onStart: () => st.classList.add('is-lit') }, i * 0.38);
+      });
+      ST.create({ trigger: $('.store__steps', store), start: 'top 85%', once: true, onEnter: () => tl.play() });
+    }
 
     // Timeline progress line and nodes.
     G.fromTo('.tl__fill', { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '.tl', start: 'top 70%', end: 'bottom 70%', scrub: 0.4 } });
@@ -1758,7 +2114,7 @@ html.lenis, html.lenis body { height: auto; }
     { "@type": "EducationalOccupationalCredential", "name": "ServiceNow Micro-Certification: Flow Designer" },
     { "@type": "EducationalOccupationalCredential", "name": "ServiceNow Micro-Certification: Welcome to ServiceNow" }
   ],
-  "knowsAbout": ["ServiceNow", "Now Assist", "Now Assist Skill Kit (NASK)", "Agentic AI", "Agent-to-Agent (A2A) orchestration", "Virtual Agent", "Vulnerability Response", "Application Vulnerability Response", "SecOps", "CMDB", "IntegrationHub ETL", "Rapid7 InsightVM", "Rapid7 AppSec", "Contrast Security", "OpenCTI", "Orca Security"]
+  "knowsAbout": ["ServiceNow", "Now Assist", "Now Assist Skill Kit (NASK)", "Agentic AI", "Agent-to-Agent (A2A) orchestration", "Virtual Agent", "Vulnerability Response", "Application Vulnerability Response", "SecOps", "CMDB", "IntegrationHub ETL", "ServiceNow Store application submission and certification", "Rapid7 InsightVM", "Rapid7 AppSec", "Contrast Security", "OpenCTI", "Orca Security"]
 }
 </script>
 
